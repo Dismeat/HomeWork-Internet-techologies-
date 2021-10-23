@@ -1,0 +1,48 @@
+<canvas id="graph" width="903" height="903"></canvas>
+<script>
+   let A=[1,null,null,null,0,null,0,null,1];
+   let n=0;
+   var canvas = document.getElementById('graph');
+   var ctx = canvas.getContext('2d');
+
+   ctx.beginPath();
+
+   ctx.moveTo(301, 0);
+   ctx.lineTo(301, 903);
+   ctx.moveTo(602, 0);
+   ctx.lineTo(602, 903);
+
+   ctx.moveTo(0, 301);
+   ctx.lineTo(903, 301);
+   ctx.moveTo(0, 602);
+   ctx.lineTo(903, 602);
+
+   ctx.stroke();
+
+   for(let m=0;m<3;m++){
+
+   for(let i=0;i<3;i++){
+
+if(A[n]==null)
+        { n++;
+          continue;};
+if(A[n]==1)
+        { ctx.beginPath();
+          ctx.moveTo(100+i*300, 100+m*300);
+          ctx.lineTo(200+i*300, 200+m*300);
+          ctx.moveTo(200+i*300, 100+m*300);
+          ctx.lineTo(100+i*300, 200+m*300); 
+             ctx.stroke();};
+
+if(A[n]==0)
+        { ctx.beginPath();
+ctx.arc(150+i*300, 150+m*300, 50, 0, 2 * Math.PI);
+ ctx.stroke();};
+
+n++;
+
+};};
+
+
+   ctx.stroke();
+</script>
