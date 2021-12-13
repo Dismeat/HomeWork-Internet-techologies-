@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Практическая работа 3.1</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+  <!-- Start App -->
+  <div id="app">
+    <div class="header">
+      <div class="container">
+        <div class="logo">Информация о марке машины</div>       
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>
+        <span>Компания Porsche - ведущий производитель спортивных автомобилей в мире. Её история - процесс эволюции одной идеи, продолжающийся более полувека. Начало этому процессу положил австрийский инженер Фердинанд Порше, открывший в 1931 г. в Штутгарте своё конструкторское бюро.</span>
+      </h2>
+      <h2 v-if="!isHidden">
+        <span>По заказу Гитлера в конце 30-х гг. он разработал заднемоторную малолитражку Volkswagen Beetle, а через десять лет уже его сын, Ферри Порше, построил на шасси Beetle первую спортивную модель - Porsche 356. Её мелкосерийное производство было организовано в 1948 г. на лесопилке в австрийской деревне Гмюнд. Машина оказалась удивительно популярной, и в 1950 г. компания вернулась в Штутгарт, где заключила контракт на поставку кузовов с местным ателье Reutter. Через год она вышла на американский рынок, который на много лет стал её основным рынком сбыта.</span>
+      </h2>
+      <button class="btn" v-on:click="isHidden = !isHidden">
+         <template v-if="isHidden">Подробнее</template>
+         <template v-else>Покороче</template>
+      </button>
+
+    </div>
+  </div>
+  <!-- End App -->
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
