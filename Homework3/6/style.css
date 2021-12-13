@@ -1,0 +1,346 @@
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  font:15px/1.3 'Open Sans', sans-serif;
+  color: #5e5b64;
+  text-align:center;
+}
+
+a {
+  font-weight: normal;
+  color: blue;
+}
+
+a, a:visited {
+	outline:none;
+	color:#389dc1;
+        font-weight: normal;
+  color: blue;
+}
+
+a.active {
+  font-weight: bold;
+  color: black;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+section, footer, header, aside, nav{
+	display: block;
+}
+
+/*-------------------------
+	Строка с переключателями
+--------------------------*/
+
+.bar{
+	background-color:green;
+	box-shadow: 0 1px 1px #ccc;
+	border-radius: 2px;
+	width: 580px;
+	padding: 10px;
+	margin: 45px auto 25px;
+	position:relative;
+	text-align:right;
+	line-height: 1;
+}
+
+.bar a{
+	background:#4987a1 center center no-repeat;
+	width:32px;
+	height:32px;
+	display:inline-block;
+	text-decoration:none !important;
+	margin-right:5px;
+	border-radius:2px;
+	cursor:pointer;
+}
+
+.bar a.active{
+	background-color:red;
+}
+
+.bar a.list-icon{
+	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkYzNkFCQ0ZBMTBCRTExRTM5NDk4RDFEM0E5RkQ1NEZCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkYzNkFCQ0ZCMTBCRTExRTM5NDk4RDFEM0E5RkQ1NEZCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjM2QUJDRjgxMEJFMTFFMzk0OThEMUQzQTlGRDU0RkIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjM2QUJDRjkxMEJFMTFFMzk0OThEMUQzQTlGRDU0RkIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7h1bLqAAAAWUlEQVR42mL8////BwYGBn4GCACxBRlIAIxAA/4jaXoPEkMyjJ+A/g9MDJQBRhYg8RFqMwg8RJIUINYLFDmBUi+ADQAF1n8ofk9yIAy6WPg4GgtDMRYAAgwAdLYwLAoIwPgAAAAASUVORK5CYII=);
+}
+
+.bar a.grid-icon{
+	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjBEQkMyQzE0MTBCRjExRTNBMDlGRTYyOTlBNDdCN0I4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjBEQkMyQzE1MTBCRjExRTNBMDlGRTYyOTlBNDdCN0I4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MERCQzJDMTIxMEJGMTFFM0EwOUZFNjI5OUE0N0I3QjgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MERCQzJDMTMxMEJGMTFFM0EwOUZFNjI5OUE0N0I3QjgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4MjPshAAAAXklEQVR42mL4////h/8I8B6IGaCYKHFGEMnAwCDIAAHvgZgRyiZKnImBQsACxB+hNoDAQyQ5osQZIT4gH1DsBZABH6AB8x/JaQzEig++WPiII7Rxio/GwmCIBYAAAwAwVIzMp1R0aQAAAABJRU5ErkJggg==);
+}
+
+.bar input{
+	background:#fff no-repeat 13px 13px;
+
+	border: none;
+	width: 100%;
+	line-height: 19px;
+	padding: 11px 0;
+
+	border-radius: 2px;
+	box-shadow: 0 2px 8px #c4c4c4 inset;
+	text-align: left;
+	font-size: 14px;
+	font-family: inherit;
+	color: #738289;
+	font-weight: bold;
+	outline: none;
+	text-indent: 40px;
+}
+
+/*-------------------------
+	Список
+--------------------------*/
+
+ul.list{
+	list-style: none;
+	width: 500px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+ul.list li{
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+	overflow: hidden;
+}
+
+ul.list li img{
+	width:120px;
+	height:80px;
+	float:left;
+	border:none;
+}
+
+ul.list li p{
+	margin-left: 135px;
+	font-weight: bold;
+	color:#6e7a7f;
+}
+
+/*-------------------------
+	Сетка
+--------------------------*/
+
+ul.grid{
+	list-style: none;
+	width: 570px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+ul.grid li{
+	padding: 2px;
+	float:left;
+}
+
+ul.grid li img{
+	width:280px;
+	height:280px;
+	object-fit: cover;
+	display:block;
+	border:none;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin: 25px 0;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+h2 .mask-num {
+  border-radius: 20px;
+  border: 2px solid #2a2f36;
+  color: #2a2f36;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 5px 10px;
+}
+
+span {
+  width: 240px;
+  overflow-wrap: break-word;
+  //overflow:hidden;
+  display: block;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  background-color: #333;
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .container .logo {
+  width: 200px;
+  //line-height: 50px;
+  //color: #ddd;
+
+  line-height: 20px;
+
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.header .container .form {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .container .form input {
+  width: calc(100% - 145px);
+  height: 40px;
+  text-indent: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  border-radius: 0;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.2s border;
+}
+
+.header .container .form input:focus {
+  border: 1px solid #12c0dd;
+}
+
+.btn {
+  background-color: #12c0dd;
+  border: 1px solid #12c0dd;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  font-size: 12px;
+  height: 40px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background-color: #0dd6f8;
+  border-color: #0dd6f8;
+}
+
+.mask-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.mask-list.complete-list li {
+  border-left-color: #999;
+  opacity: .5;
+}
+.mask-list {
+    padding-left: 0;
+}
+
+input[type="checkbox"] + span {
+    padding-left: 10px;
+}
+
+.btn-remove {
+    border: 1px solid #2a2f36;
+    font-size: 12px;
+    border: 2px solid #2a2f36;
+    background-color: #333333;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-size: 12px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.btn-remove:hover {
+  background-color: #535151;
+  border-color: #535151;
+}
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:not(:checked){
+   position: absolute;
+   z-index: 1;
+   opacity: 0;
+   width: 20px;
+   height: 20px;
+   margin-top: 6px;
+}
+input[type="checkbox"]:checked + span,
+input[type="checkbox"]:not(:checked) + span{
+   position: relative;
+   padding-left: 35px;
+   cursor:pointer;
+}
+input[type="checkbox"]:checked + span::before{
+   content:'';
+   position: absolute;
+   width: 16px;
+   height: 16px;
+   left:0;
+   top:calc(50% - 10px);
+   background-color: transparent;
+   border-radius: 2px;
+   border: 2px solid #4fc1de;
+}
+input[type="checkbox"]:checked + span::after{
+   content:'';
+   position: absolute;
+   width: 12px;
+   height: 12px;
+   transition: all .2s ease;
+   opacity: 1;
+   left: 4px;
+   top: calc(50% - 6px);
+   background-color: #4fc1de;
+}
+input[type="checkbox"]:not(:checked) + span::before{
+   content:'';
+   position: absolute;
+   width: 16px;
+   height: 16px;
+   left:0;
+   top:calc(50% - 10px);
+   background-color: transparent;
+   border-radius: 2px;
+   border: 2px solid #5d575f;
+}
+input[type="checkbox"]:not(:checked) + span::after{
+   content:'';
+   position: absolute;
+   width: 12px;
+   height: 12px;
+   transition: all .2s ease;
+   opacity: 0;
+   left: 4px;
+   top: calc(50% - 6px);
+   background-color: #7d25a9;
+}
